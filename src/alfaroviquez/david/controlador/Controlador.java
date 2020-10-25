@@ -4,13 +4,23 @@ import alfaroviquez.david.bl.entidades.Computadora;
 import alfaroviquez.david.bl.entidades.Empleado;
 import alfaroviquez.david.bl.logica.Gestor;
 import alfaroviquez.david.iu.IU;
-
 import java.util.ArrayList;
+
+/**
+ * Clase controlador
+ *
+ * @author David Alfaro Viquez
+ * @version 1.0
+ * @since 22/10/2020
+ */
 
 public class Controlador {
     Gestor gestor = new Gestor();
     IU iu = new IU();
 
+    /**
+     * Metodo para ejecutar el programa en el main
+     */
     public void ejecutarPrograma() {
         int opcion = 0;
         do {
@@ -21,6 +31,13 @@ public class Controlador {
 
 
     }
+
+    /**
+     * Metodo para procesar la opcion que escogio el usuario
+     * La opcion se procesa en un switch-case
+     *
+     * @param opcion de menu escogida por el usuario
+     */
 
     private void procesarOpcion(int opcion) {
         switch (opcion) {
@@ -46,6 +63,11 @@ public class Controlador {
         }
     }
 
+    /**
+     * Metodo para registrar empleado
+     * Utiliza el gestor para crear el empleado
+     * Mediante la clase interfaz se le pregunta al usuario los parametros y se le pasa estos parametros al constructor
+     */
     private void registrarEmpleado() {
         iu.imprimirMensaje("Registrar empleado--->");
         iu.imprimirMensaje("Nombre: ");
@@ -58,7 +80,11 @@ public class Controlador {
         iu.imprimirMensaje("Empleado registrado con exito!");
 
     }
-
+    /**
+     * Metodo para registrar una computadora
+     * Utiliza el gestor para crear el empleado
+     * Mediante la clase interfaz se le pregunta al usuario los parametros y se le pasa estos parametros al constructor
+     */
     private void registrarComputadora() {
         iu.imprimirMensaje("Registrar computadora--->");
         iu.imprimirMensaje("Numero de Serie: ");
@@ -67,6 +93,11 @@ public class Controlador {
         String marca = iu.leerTexto();
         gestor.crearComputadora(serie, marca);
     }
+
+    /**
+     * Metodo para poder asignar un equipo a un empleado
+     * Usando la interfaz se le pregunta al usuario por los parametros para buscar un empleado por su cedula y buscar una computadora por su numero de serie
+     */
 
     private void asignarEquipo() {
         iu.imprimirMensaje("Asignar equipo a empleado--> ");
@@ -82,6 +113,10 @@ public class Controlador {
 
     }
 
+    /**
+     * Metodo para listar empleados
+     */
+
     private void listarEmpleados(){
         ArrayList<Empleado> listaEmpleados;
         listaEmpleados = gestor.listarEmpleados();
@@ -90,6 +125,9 @@ public class Controlador {
         }
     }
 
+    /**
+     * Metodo para listar computadoras
+     */
     private void listarComputadoras(){
         ArrayList<Computadora> listaCompus;
         listaCompus = gestor.listarComputadoras();

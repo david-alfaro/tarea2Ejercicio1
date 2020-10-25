@@ -1,5 +1,13 @@
 package alfaroviquez.david.bl.entidades;
 
+/**
+ * Clase Empleado
+ * Para definir instancias de tipo empleado
+ *
+ * @author David Alfaro Viquez
+ * @version 1.0
+ * @since 22/10/2020
+ */
 public class Empleado {
     private String nombre;
     private String cedula;
@@ -32,6 +40,12 @@ public class Empleado {
     public Empleado() {
     }
 
+    /**
+     *
+     * @param nombre del empleado
+     * @param cedula del empleado
+     * @param departamento en el que trabaja el empleado
+     */
     public Empleado(String nombre, String cedula, String departamento) {
         this.nombre = nombre;
         this.cedula = cedula;
